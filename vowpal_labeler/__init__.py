@@ -28,7 +28,7 @@ class VowpalLearner(object):
             inner = ' '.join('{}:{}'.format(j, value)
                              for j, value
                              in enumerate(x))
-            vw_x.append('| {}\n'.format(inner).encode())
+            vw_x.append('| {}\n'.format(inner))
 
         return vw_x
 
@@ -37,7 +37,7 @@ class VowpalLearner(object):
         while True:
             i = random.randint(0, len(self.distances))
             x = self.distances[i]
-            self.sock.sendall(x)
+            self.sock.sendall(x.encode())
             response = self.sock.recv(4096).decode()
             response = [float(each) for each in response.strip().split()]
             if len(response) > 1:
@@ -55,8 +55,6 @@ class VowpalLearner(object):
             example = '{} {} {}'.format(y, importance, x).encode()
             self.sock.sendall(example)
 
-        response = self.sock.recv(4096).decode()
-        return response
 
     def __len__(self):
         return len(self.candidates)
