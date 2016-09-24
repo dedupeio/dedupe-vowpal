@@ -4,9 +4,10 @@ import socket
 import subprocess
 import shlex
 import time
+from dedupe.labeler import ActiveLearner
 
 
-class VowpalLearner(object):
+class VowpalLearner(ActiveLearner):
     def __init__(self, data_model, candidates):
         self.data_model = data_model
         self.candidates = candidates
@@ -55,6 +56,5 @@ class VowpalLearner(object):
             example = '{} {} {}'.format(y, importance, x).encode()
             self.sock.sendall(example)
 
-
     def __len__(self):
-        return len(self.candidates)
+         return len(self.candidates)

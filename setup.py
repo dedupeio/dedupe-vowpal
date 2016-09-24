@@ -14,7 +14,7 @@ setup(
     author_email='fgregg@datamade.us',
     description='Vowpal Wabbit active learning labeler for the dedupe python library',
     packages=['vowpal_labeler'],
-    install_requires=['numpy'],
+    install_requires=['dedupe', 'numpy'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
