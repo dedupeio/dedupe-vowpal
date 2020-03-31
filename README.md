@@ -3,6 +3,8 @@ Vowpal Wabbit Active Labeler for Dedupe
 
 This module provides an class for active learning using Vowpal Wabbit. 
 
+Part of the [Dedupe.io](https://dedupe.io/) cloud service and open source toolset for de-duplicating and finding fuzzy matches in your data.
+
 # Prerequsites
 * [Vowpal Wabbit](https://github.com/JohnLangford/vowpal_wabbit#getting-the-code)
 
